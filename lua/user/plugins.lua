@@ -72,15 +72,22 @@ local plugins = {
 	},
 	{
 		'hrsh7th/nvim-cmp',
-		dependencies = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' }
-	}
-
+		dependencies = { 
+		'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' }
+	},
 }
 
 
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+require('telescope').setup({ 
+  defaults = { 
+    file_ignore_patterns = { 
+      ".git", "vendor", "python39", "__pycache__" 
+    }
+  }
+})
 require("mason").setup()
 local cmp = require('cmp')
 cmp.setup({
@@ -110,10 +117,7 @@ cmp.setup({
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
-	}, {
-		{ name = 'buffer' },
-	})
-})
+	}, { { name = 'buffer' }, }) })
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
