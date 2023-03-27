@@ -1,2 +1,1 @@
-require("nstevenson")
-print("hello")
+require("user")
