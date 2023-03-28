@@ -66,14 +66,15 @@ local plugins = {
 	},
 	'neovim/nvim-lspconfig',
 	'simrat39/rust-tools.nvim',
+	"github/copilot.vim",
 	{
 		'projekt0n/github-nvim-theme',
 		tag = 'v0.0.7'
 	},
 	{
 		'hrsh7th/nvim-cmp',
-		dependencies = { 
-		'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' }
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' }
 	},
 }
 
@@ -81,12 +82,12 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
-require('telescope').setup({ 
-  defaults = { 
-    file_ignore_patterns = { 
-      ".git", "vendor", "python39", "__pycache__" 
-    }
-  }
+require('telescope').setup({
+	defaults = {
+		file_ignore_patterns = {
+			".git", "vendor", "python39", "__pycache__"
+		}
+	}
 })
 require("mason").setup()
 local cmp = require('cmp')
@@ -117,7 +118,8 @@ cmp.setup({
 		-- { name = 'luasnip' }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
-	}, { { name = 'buffer' }, }) })
+	}, { { name = 'buffer' }, })
+})
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
