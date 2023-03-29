@@ -2,7 +2,7 @@ require("user.plugins")
 require("user.lspconfig")
 require("user.remap")
 
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin-mocha"
 
 --[[ opts.lua ]]
 local opt = vim.opt

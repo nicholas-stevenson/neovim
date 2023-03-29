@@ -68,6 +68,7 @@ local plugins = {
     'simrat39/rust-tools.nvim',
     "github/copilot.vim",
     "lewis6991/gitsigns.nvim",
+    "nicholas-stevenson/sendtomaya.vim",
     {
         'projekt0n/github-nvim-theme',
         tag = 'v0.0.7'
@@ -104,3 +105,15 @@ require('telescope').setup({
 })
 require("mason").setup()
 require("gitsigns").setup()
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "rust", "lua", "python", "vim" },
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    }
+})
+vim.g.send_to_maya_host = "127.0.0.1"
+vim.g.send_to_maya_port = 7002
+vim.g.send_to_maya_prefer_language = 'python'
