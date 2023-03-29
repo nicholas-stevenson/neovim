@@ -68,7 +68,7 @@ local plugins = {
     'simrat39/rust-tools.nvim',
     "github/copilot.vim",
     "lewis6991/gitsigns.nvim",
-    "nicholas-stevenson/sendtomaya.vim",
+    { "nicholas-stevenson/sendtomaya.vim", branch = "execfile_python39_changes" },
     {
         'projekt0n/github-nvim-theme',
         tag = 'v0.0.7'

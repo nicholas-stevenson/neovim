@@ -19,7 +19,22 @@ vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>R", ":!cargo run<CR>")
 
+-- Send to Maya Mapptings
 vim.keymap.set("v", "<leader>ma", ":SendToMayaPy<CR>")
+vim.keymap.set("n", "<leader>ma", ":SendToMayaPy<CR>")
+
+-- Yank/Paste to/from system clipboard keymaps.  Use leader+y/p to copy/paste
+-- copy
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+yg_')
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>yy", '"+yy')
+-- paste
+vim.keymap.set("n", "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>P", '"+P')
+vim.keymap.set("v", "<leader>p", '+p')
+vim.keymap.set("v", "<leader>P", '+P')
+
 -- Remaps the Ctrl+W + h/j/k/l keys, which moves your cursor
 -- the particular window splits, to just Ctrl+h/j/k/l
 vim.keymap.set("n", "<C-H>", "<C-W>h")
