@@ -73,6 +73,7 @@ local plugins = {
         'projekt0n/github-nvim-theme',
         tag = 'v0.0.7'
     },
+    "jose-elias-alvarez/null-ls.nvim",
     {
         'hrsh7th/nvim-cmp',
         dependencies = {
@@ -114,6 +115,16 @@ require("nvim-treesitter.configs").setup({
         additional_vim_regex_highlighting = false,
     }
 })
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.completion.spell,
+        null_ls.builtins.diagnostics.ruff,
+        null_ls.builtins.formatting.black
+    },
+})
+
 vim.g.send_to_maya_host = "127.0.0.1"
 vim.g.send_to_maya_port = 7002
 vim.g.send_to_maya_prefer_language = 'python'

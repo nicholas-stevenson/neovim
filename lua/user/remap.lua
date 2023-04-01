@@ -50,6 +50,14 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fk', ":Telescope keymaps<CR>")
 
 
+-- Copilot
+vim.g.copilot_no_tab_map = true
+
+vim.g.copilot_assume_mapped = true
+
+vim.g.copilot_tab_fallback = ""
+
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
