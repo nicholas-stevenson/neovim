@@ -2,7 +2,7 @@ require("user.plugins")
 require("user.lspconfig")
 require("user.remap")
 
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "kanagawa"
 
 --[[ opts.lua ]]
 local opt = vim.opt
@@ -14,10 +14,6 @@ opt.relativenumber = true -- bool: Show relative line numbers
 opt.scrolloff = 4         -- int:  Min num lines of context
 opt.signcolumn = "yes"    -- str:  Show the sign column
 opt.wrap = false          -- bool: Don't wrap lines
-
--- [[ Filetypes ]]
-opt.encoding = 'utf8'     -- str:  String encoding to use
-opt.fileencoding = 'utf8' -- str:  File encoding to use
 
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting

@@ -35,12 +35,18 @@ vim.keymap.set("n", "<leader>P", '"+P')
 vim.keymap.set("v", "<leader>p", '+p')
 vim.keymap.set("v", "<leader>P", '+P')
 
--- Remaps the Ctrl+W + h/j/k/l keys, which moves your cursor
--- the particular window splits, to just Ctrl+h/j/k/l
-vim.keymap.set("n", "<C-H>", "<C-W>h")
-vim.keymap.set("n", "<C-J>", "<C-W>j")
-vim.keymap.set("n", "<C-K>", "<C-W>k")
-vim.keymap.set("n", "<C-L>", "<C-W>l")
+-- resizing splits
+vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
+vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
+vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
+vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
+-- moving between splits
+vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
+
+
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

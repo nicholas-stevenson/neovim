@@ -13,13 +13,19 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
+    "ThePrimeagen/vim-be-good",
     {
-        "ThePrimeagen/vim-be-good"
+        "mrjones2014/smart-splits.nvim",
+        opts = { ignored_filetypes = { "nofile", "quickfix", "qf", "prompt" }, ignored_buftypes = { "nofile" } },
     },
     {
         "catppuccin/nvim",
         name = "catppuccin"
     },
+    'folke/tokyonight.nvim',
+    "EdenEast/nightfox.nvim",
+    "ellisonleao/gruvbox.nvim",
+    "rebelot/kanagawa.nvim",
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
