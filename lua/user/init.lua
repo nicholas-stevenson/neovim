@@ -2,7 +2,7 @@ require("user.plugins")
 require("user.lspconfig")
 require("user.remap")
 
-vim.cmd.colorscheme "kanagawa"
+vim.cmd.colorscheme "kanagawa-dragon"
 
 --[[ opts.lua ]]
 local opt = vim.opt
